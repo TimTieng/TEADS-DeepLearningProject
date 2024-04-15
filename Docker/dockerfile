@@ -1,0 +1,18 @@
+# Use an official Python runtime as a parent image
+FROM python:3.10.13
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed dependencies specified in requirements.txt
+# pip_requirements.txt can be found in the 'Config' folder within the TechEx_Project_2 Directory
+RUN pip install --no-cache-dir -r pip_requirements.txt
+
+# Define environment variable - Not needed for this project
+# ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
